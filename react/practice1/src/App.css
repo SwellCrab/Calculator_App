@@ -1,38 +1,90 @@
-.App {
-  text-align: center;
+#screen {
+  background-color: cadetblue;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#container {
+  position: absolute;
+  height: 160px;
+  width: 240px;
+  background-color: white;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#output {
+  position: absolute;
+  height: 20%;
+  width: 70%;
+  left: 15%;
+  top:5%;
+  background-color: rgb(46, 90, 170);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#body {
+  position: absolute;
+  height: 65%;
+  width: 80%;
+  width: 80%;
+  left: 10%;
+  top:30%;
+  background-color: grey;
 }
 
-.App-link {
-  color: #61dafb;
+#input1 {
+  position: absolute;
+  height: 20%;
+  width: 50%;
+  left: 10%;
+  top:10%;
+  background-color: lightseagreen;
+  float: left;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#input2 {
+  position: absolute;
+  height: 20%;
+  width: 50%;
+  left: 10%;
+  top: 40%;
+  background-color: lightseagreen;
+  ;
+  float: left;
+}
+
+/* - */
+#action_key1 {
+  position: absolute;
+  height: 20%;
+  width: 25%;
+  right: 10%;
+  top: 10%;
+  background-color: lightblue;
+  float: right;
+}
+
+/* + */
+#action_key2 {
+  position: absolute;
+  height: 20%;
+  width: 25%;
+  right: 10%;
+  top: 40%;
+  background-color: lightblue;
+  float: right;
+}
+
+/* = */
+#action_key3 {
+  position: absolute;
+  height: 20%; 
+  width: 25%;
+  right: 10%;
+  top: 70%;
+  background-color: lightblue;
+  float: right;
+}
+
+.Fit{
+  position: absolute;
+  height: 100%; 
+  width: 100%; 
+   
 }
