@@ -4,31 +4,38 @@
 
 #container {
   position: absolute;
-  height: 160px;
-  width: 240px;
+  height: 400px;
+  width: 300px;
   background-color: white;
 }
 
-#output {
+#output_Top {
   position: absolute;
-  height: 20%;
-  width: 70%;
-  left: 15%;
+  height: 10%;
+  width: 90%;
+  left: 5%;
   top:5%;
+  background-color: rgb(46, 90, 170);
+}
+#output_Bottom {
+  position: absolute;
+  height: 10%;
+  width: 90%;
+  left: 5%;
+  top:15%;
   background-color: rgb(46, 90, 170);
 }
 
 #body {
   position: absolute;
-  height: 65%;
-  width: 80%;
-  width: 80%;
-  left: 10%;
-  top:30%;
+  height: 90%;
+  width: 90%;
+  left: 5%;
+  top:5%;
   background-color: grey;
 }
 
-#input1 {
+ /* #input1 {
   position: absolute;
   height: 20%;
   width: 50%;
@@ -36,9 +43,9 @@
   top:10%;
   background-color: lightseagreen;
   float: left;
-}
+} 
 
-#input2 {
+ #input2 {
   position: absolute;
   height: 20%;
   width: 50%;
@@ -47,40 +54,190 @@
   background-color: lightseagreen;
   ;
   float: left;
-}
+}  */
+
+/* ===================================================== */
 
 /* - */
-#action_key1 {
+#action_key_minus {
   position: absolute;
-  height: 20%;
-  width: 25%;
-  right: 10%;
-  top: 10%;
+  height: 12%;
+  width: 12%;
+  left: 66%;
+  top: 49%;
   background-color: lightblue;
-  float: right;
+  float: left;
 }
 
 /* + */
-#action_key2 {
+#action_key_add {
   position: absolute;
-  height: 20%;
-  width: 25%;
-  right: 10%;
-  top: 40%;
+  height: 12%;
+  width: 12%;
+  left: 66%;
+  top: 32%;
   background-color: lightblue;
-  float: right;
+  float: left;
+}
+
+/* x */
+#action_key_multiply {
+  position: absolute;
+  height: 12%;
+  width: 12%;
+  left: 83%;
+  top: 32%;
+  background-color: lightblue;
+  float: left;
+}
+
+/* % */
+#action_key_divide {
+  position: absolute;
+  height: 12%;
+  width: 12%;
+  left: 83%;
+  top: 49%;
+  background-color: lightblue;
+  float: left;
 }
 
 /* = */
-#action_key3 {
+#action_key_equals {
   position: absolute;
-  height: 20%; 
+  height: 12%; 
   width: 25%;
-  right: 10%;
-  top: 70%;
+  left: 68%;
+  top: 66%;
   background-color: lightblue;
-  float: right;
+  float: left;
 }
+
+/* clr */
+#action_key_clear {
+  position: absolute;
+  height: 12%;
+  width: 25%;
+  left: 68%;
+  top: 83%;
+  background-color: lightblue;
+  float: left;
+}
+
+/* =============================================== */
+/* ================ Number inputs ================ */
+
+#action_key_1 {
+  position: absolute;
+  height: 12%;
+  width: 12%;
+  left: 5%;
+  top: 32%;
+  background-color: lightblue;
+  float: left;
+}
+
+#action_key_2 {
+  position: absolute;
+  height: 12%;
+  width: 12%;
+  left: 22%;
+  top: 32%;
+  background-color: lightblue;
+  float: left;
+}
+
+#action_key_3 {
+  position: absolute;
+  height: 12%;
+  width: 12%;
+  left: 39%;
+  top: 32%;
+  background-color: lightblue;
+  float: left;
+}
+
+#action_key_4 {
+  position: absolute;
+  height: 12%;
+  width: 12%;
+  left: 5%;
+  top: 49%;
+  background-color: lightblue;
+  float: left;
+}
+
+#action_key_5 {
+  position: absolute;
+  height: 12%;
+  width: 12%;
+  left: 22%;
+  top: 49%;
+  background-color: lightblue;
+  float: left;
+}
+
+#action_key_6 {
+  position: absolute;
+  height: 12%;
+  width: 12%;
+  left: 39%;
+  top: 49%;
+  background-color: lightblue;
+  float: left;
+}
+
+#action_key_7 {
+  position: absolute;
+  height: 12%;
+  width: 12%;
+  left: 5%;
+  top: 66%;
+  background-color: lightblue;
+  float: left;
+}
+
+#action_key_8 {
+  position: absolute;
+  height: 12%;
+  width: 12%;
+  left: 22%;
+  top: 66%;
+  background-color: lightblue;
+  float: left;
+}
+
+#action_key_9 {
+  position: absolute;
+  height: 12%;
+  width: 12%;
+  left: 39%;
+  top: 66%;
+  background-color: lightblue;
+  float: left;
+}
+
+#action_key_0 {
+  position: absolute;
+  height: 12%;
+  width: 12%;
+  left: 5%;
+  top: 83%;
+  background-color: lightblue;
+  float: left;
+}
+
+#action_key_00 {
+  position: absolute;
+  height: 12%;
+  width: 25%;
+  left: 24%;
+  top: 83%;
+  background-color: lightblue;
+  float: left;
+}
+
+
 
 .Fit{
   position: absolute;
