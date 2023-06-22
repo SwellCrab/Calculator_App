@@ -5,109 +5,76 @@ function App() {
 
 
 
-  const [operatorflag,setOperatorflag]=useState(false);
-  const [operator,setOperator]= useState('none');
+  const [operatorflag, setOperatorflag] = useState(false);
+  const [operator, setOperator] = useState(' ');
+  const [equalsflag, setEqualsflag] = useState('');
 
-  // const [floater, setFloater] = useState('');
-
-  const [number1, setNumber1] = useState(0); 
-  const [number2, setNumber2] = useState(0); 
-  const [sum, setSum] = useState(''); 
+  const [number1, setNumber1] = useState('');
+  const [number2, setNumber2] = useState('');
+  const [sum, setSum] = useState('');
 
   const [fromButtons, setFromButtons] = useState('');
-
-  const [displayTop, setDisplayTop] = useState(0);
-  const [displayBottom, setDisplayBottom] = useState(0);
 
   const handleButtonClick = (value) => {
     setFromButtons(fromButtons + value);
     const temp = parseInt(fromButtons + value);
-    if (operatorflag){
-      setNumber2(temp);  
-    }else{
+    if (operatorflag) {
+      setNumber2(temp);
+    } else {
       setNumber1(temp);
     }
   };
 
   const handleOperator = (value) => {
-    if (operatorflag)
-    {
+    if (operatorflag) {
       alert('An operator is already selected, please clear.');
-    }else{
+    } else {
       setOperator(value);
       setOperatorflag(true);
       setFromButtons('');
-      
+
     }
 
   };
 
   function handleCalculation() {
-    // switch ('add') {
-    //   case 'add':
 
-    //   case 'subtract':
-    //     setSum(parseInt(number1) - parseInt(number2));
-    //     handleDisplayBottom();
+    if (equalsflag === '') {
 
-    //   case 'multiply':
+      if (operator === '+') {
+        setSum(parseInt(number1) + parseInt(number2));
+        setEqualsflag('=');
 
+      } else if (operator === '-') {
+        setSum(parseInt(number1) - parseInt(number2));
+        setEqualsflag('=');
 
-    //   case 'divide':
+      } else if (operator === 'x') {
+        setSum(parseFloat((parseFloat(number1) * parseFloat(number2)).toFixed(3)));
+        setEqualsflag('=');
 
-    //   case 'nonce':
-    //     alert("DBAD");
-    //   default:
-    //     alert("eeeeee")
+      } else if (operator === '%') {
+        setSum(parseFloat((parseFloat(number1) / parseFloat(number2)).toFixed(3)));
+        setEqualsflag('=');
+      } else {
+        alert('Select an operator first');
+      }
 
-    // }
-
-    if (operator == 'add'){
-      setSum(number1 + number2);
-      handleDisplayBottom();      
-
-    }else if(operator == 'subtract'){
-      setSum(parseInt(number1) - parseInt(number2));
-      handleDisplayBottom();
-
-    }else if(operator == 'multiply'){
-
-    }else if(operator == 'divide'){
-
-    }else{
-      alert('ddddd');
+    } else {
+      alert("Clear first before retrying");
     }
-  }
-
-
-
-  function handleDisplayTop() {
-    setDisplayTop(number1);
-  }
-  function handleDisplayBottom() {
-    setDisplayBottom(sum);
-  }
-
-  function empty(){
 
   }
 
-
-
-
-
-
-
-  // const handleChangeNum1 = event => {
-  //   const strToInt = parseInt(event.target.value);
-  //   setNumber1(strToInt);
-  // }
-  // const handleChangeNum2 = event => {
-  //   const strToInt = parseInt(event.target.value);
-  //   setNumber2(strToInt);
-  // }
-
-
+  function clear() {
+    setOperator(' ');
+    setOperatorflag(false);
+    setEqualsflag('');
+    setNumber1('');
+    setNumber2('');
+    setSum('');
+    setFromButtons('');
+  }
 
   return (
 
@@ -116,44 +83,27 @@ function App() {
 
         <div id='body'>
 
-
           <div id='output_Top'>
-            {number1} {operator} {number2}
+            {number1} {operator} {number2} {equalsflag}
           </div>
-          <div id='output_Bottom'>
+          <div dir="rtl" id='output_Bottom'>
             {sum}
           </div>
-
-          {/* <div id='input1'>
-            <input className='Fit' type="number" onChange={(event)=>handleChangeNum1(event)} value={number1}></input>
-          </div>
-          <div id='input2'>
-            <input className='Fit' type="number" onChange={(event)=>handleChangeNum2(event)} value={number2}></input>
-          </div>
-          <div id='action_key1'>
-          <button className='Fit' onClick={()=>Subtract()}>-</button>
-          </div>
-          <div id='action_key2'>
-          <button className='Fit' onClick={()=>Add()}>+</button>
-          </div>
-          <div id='action_key3'>
-          <button className='Fit' onClick= {()=>handleDisplay()}>=</button>
-          </div> */}
           {/* + */}
           <div id='action_key_add'>
-            <button className='Fit' onClick={() => handleOperator('add')}>+</button>
+            <button className='Fit' onClick={() => handleOperator('+')}>+</button>
           </div>
           {/* - */}
           <div id='action_key_minus'>
-            <button className='Fit' onClick={() => handleOperator('subtract')}>-</button>
+            <button className='Fit' onClick={() => handleOperator('-')}>-</button>
           </div>
           {/* x */}
           <div id='action_key_multiply'>
-            <button className='Fit' onClick={() => handleOperator('multiply')}>x</button>
+            <button className='Fit' onClick={() => handleOperator('x')}>x</button>
           </div>
           {/* % */}
           <div id='action_key_divide'>
-            <button className='Fit' onClick={() => handleOperator('divide')}>%</button>
+            <button className='Fit' onClick={() => handleOperator('%')}>%</button>
           </div>
           {/* = */}
           <div id='action_key_equals'>
@@ -161,7 +111,7 @@ function App() {
           </div>
           {/* clr */}
           <div id='action_key_clear'>
-            <button className='Fit' onClick={() => empty()}>clr</button>
+            <button className='Fit' onClick={() => clear()}>clr</button>
           </div>
           {/* 1 */}
           <div id='action_key_1'>
@@ -207,8 +157,6 @@ function App() {
           <div id='action_key_00'>
             <button className='Fit' onClick={() => handleButtonClick('00')}>00</button>
           </div>
-
-
 
         </div>
 
