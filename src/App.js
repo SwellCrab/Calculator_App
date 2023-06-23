@@ -13,7 +13,7 @@ function App() {
       </div>
 
       <div id = 'align'>
-        <button id='btn' onClick={() => setModalState(true)}> Click here! </button>
+        <button id='btn' onClick={() => setModalState(true)}> Click here!! </button>
         {modalState && <Modal modalStatePortal={setModalState} />}
       </div>
     </div>
