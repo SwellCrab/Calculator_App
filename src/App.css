@@ -1,0 +1,35 @@
+#screen {
+  background-color: cadetblue;
+}
+
+.Fit{
+  position: absolute;
+  height: 100%; 
+  width: 100%; 
+   
+}
+
+#title{
+  font-family: "Nunito", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#align{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+#btn{
+  border: none;
+  cursor:pointer ;  
+  font-family: "Nunito", sans-serif;
+  background-color: cornflowerblue;
+  border-radius: 6px;
+  font-weight: bold;
+  height: 50px;
+  width:120px;
+
+}
