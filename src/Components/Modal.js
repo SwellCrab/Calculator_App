@@ -1,5 +1,5 @@
-
-import { useState } from 'react'
+import React from 'react';
+import { useState } from 'react';
 import './Modal.css';
 
 function Modal({ modalStatePortal }) {
@@ -11,17 +11,8 @@ function Modal({ modalStatePortal }) {
   const [number2, setNumber2] = useState('');
   const [sum, setSum] = useState('');
 
-  const [fromButtons, setFromButtons] = useState('');
-
-  const handleButtonClick = (value) => {
-    setFromButtons(fromButtons + value);
-    const temp = parseInt(fromButtons + value);
-    if (operatorflag) {
-      setNumber2(temp);
-    } else {
-      setNumber1(temp);
-    }
-  };
+  const numbr_btns = [];
+  const opert_btns = [];
 
   const handleOperator = (value) => {
     if (operatorflag) {
@@ -29,8 +20,6 @@ function Modal({ modalStatePortal }) {
     } else {
       setOperator(value);
       setOperatorflag(true);
-      setFromButtons('');
-
     }
 
   };
@@ -71,90 +60,73 @@ function Modal({ modalStatePortal }) {
     setNumber1('');
     setNumber2('');
     setSum('');
-    setFromButtons('');
   }
+
+  ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '00', '.'].forEach(i => {
+    numbr_btns.push(
+      <div>
+        <button className="fit font" onClick={e => {
+          if (equalsflag === '') {
+            if (operatorflag) {
+              setNumber2(number2 + e.target.value);
+            } else {
+              setNumber1(number1 + e.target.value);
+            }
+          }
+        }}
+          value={i}
+          key={i}>
+          {i}
+        </button>
+      </div>
+    )
+  });
+
+  ['+', '-', 'x', '%'].forEach(i => {
+    opert_btns.push(
+      <div>
+        <button className="fit font" onClick={e => handleOperator(e.target.value)}
+          value={i}
+          key={i}>
+          {i}
+        </button>
+      </div>
+    )
+  });
+
 
   return (
 
-    <div id = 'modalScreen'>
-      <div id='modalContainer'>
+    <div id='modalScreen'>
 
-        <div className='Font' id='output_Top'>
+      <div id='output'>
+        <div className='font' id='output_Top'>
           {number1} {operator} {number2} {equalsflag}
         </div>
-        <div dir="rtl" className='Font' id='output_Bottom'>
+        <div dir="rtl" className='font' id='output_Bottom'>
           {sum}
         </div>
-        {/* + */}
-        <div id='action_key_add'>
-          <button className='Fit Font' onClick={() => handleOperator('+')}>+</button>
-        </div>
-        {/* - */}
-        <div id='action_key_minus'>
-          <button className='Fit Font' onClick={() => handleOperator('-')}>-</button>
-        </div>
-        {/* x */}
-        <div id='action_key_multiply'>
-          <button className='Fit Font' onClick={() => handleOperator('x')}>x</button>
-        </div>
-        {/* % */}
-        <div id='action_key_divide'>
-          <button className='Fit Font' onClick={() => handleOperator('%')}>%</button>
-        </div>
-        {/* = */}
-        <div id='action_key_equals'>
-          <button className='Fit Font equals' onClick={() => handleCalculation()}>=</button>
-        </div>
-        {/* clr */}
-        <div id='action_key_clear'>
-          <button className='Fit Font' onClick={() => clear()}>clr</button>
-        </div>
-        {/* 1 */}
-        <div id='action_key_1'>
-          <button className='Fit Font' onClick={() => handleButtonClick('1')}>1</button>
-        </div>
-        {/* 2  */}
-        <div id='action_key_2'>
-          <button className='Fit Font' onClick={() => handleButtonClick('2')}>2</button>
-        </div>
-        {/* 3  */}
-        <div id='action_key_3'>
-          <button className='Fit Font' onClick={() => handleButtonClick('3')}>3</button>
-        </div>
-        {/* 4  */}
-        <div id='action_key_4'>
-          <button className='Fit Font' onClick={() => handleButtonClick('4')}>4</button>
-        </div>
-        {/* 5  */}
-        <div id='action_key_5'>
-          <button className='Fit Font' onClick={() => handleButtonClick('5')}>5</button>
-        </div>
-        {/* 6  */}
-        <div id='action_key_6'>
-          <button className='Fit Font' onClick={() => handleButtonClick('6')}>6</button>
-        </div>
-        {/* 7  */}
-        <div id='action_key_7'>
-          <button className='Fit Font' onClick={() => handleButtonClick('7')}>7</button>
-        </div>
-        {/* 8  */}
-        <div id='action_key_8'>
-          <button className='Fit Font' onClick={() => handleButtonClick('8')}>8</button>
-        </div>
-        {/* 9  */}
-        <div id='action_key_9'>
-          <button className='Fit Font' onClick={() => handleButtonClick('9')}>9</button>
-        </div>
-        {/* 0  */}
-        <div id='action_key_0'>
-          <button className='Fit Font' onClick={() => handleButtonClick('0')}>0</button>
-        </div>
-        {/* 00  */}
-        <div id='action_key_00'>
-          <button className='Fit Font close' onClick={() => modalStatePortal(false)}>Close</button>
-        </div>
-
       </div>
+
+      <div className="screen">
+        <div id='container-numbr' class='grid-numbr'>
+          {numbr_btns}
+        </div>
+        <div id='container-opert' class='grid-opert'>
+          {opert_btns}
+        </div>
+        <div id='container-funct' class='grid-funct'>
+          <div>
+            <button id='equals' className='fit ' onClick={() => handleCalculation()}>=</button>
+          </div>
+          <div>
+            <button id='clear' className='fit ' onClick={() => clear()}>clr</button>
+          </div>
+        </div>
+      </div>
+
+      <button  onClick={modalStatePortal=true}>Close</button>
+
     </div>
 
   )
