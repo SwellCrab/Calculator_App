@@ -125,7 +125,7 @@ function Modal({ modalStatePortal }) {
         </div>
       </div>
 
-      <button  onClick={modalStatePortal=true}>Close</button>
+      <button id='close' class='foot' onClick={() => modalStatePortal(false)}>Close</button>
 
     </div>
 

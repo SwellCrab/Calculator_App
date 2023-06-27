@@ -44,10 +44,10 @@
 
   .foot{
     position: absolute;
-    height: 40%;
-    width: 15%;
-    left: 42.5%;
-    top: 20%;
+    height: 9%;
+    width: 7%;
+    left: 46.5%;
+    top: 65%;
   }
 
   /* ===================================================== */
@@ -67,6 +67,16 @@
     cursor:pointer ;  
     font-family: "Nunito", sans-serif;
     background-color: coral;
+    border-radius: 6px;
+    font-weight: bold;
+    padding: 5px;
+  }
+
+  #close{
+    border: none;
+    cursor:pointer ;  
+    font-family: "Nunito", sans-serif;
+    background-color: crimson;
     border-radius: 6px;
     font-weight: bold;
     padding: 5px;
