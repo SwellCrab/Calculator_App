@@ -6,220 +6,140 @@
     position: absolute;
     top: 0px;
     right: 0px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  #modalContainer {
-      position: absolute;
-      height: 400px;
-      width: 300px;
-      display: flex;
-      box-shadow: black 0px 4px 12px;
-      background-color: white;
-      border-radius: 6px;
   }
 
   #output_Top {
-      position: absolute;
-      height: 10%;
-      width: 90%;
-      left: 5%;
-      top: 5%;
+      height: 50%;
+      width: 100%;
+      left: 25%;
       background-color: rgb(46, 90, 170);
       border-radius: 6px 6px 0px 0px;
   }
 
   #output_Bottom {
-      position: absolute;
-      height: 10%;
-      width: 90%;
-      left: 5%;
-      top: 15%;
+    
+      height: 50%;
+      width: 100%;
+      left: 25%;
+      top: 50%;
       background-color: rgb(46, 90, 170);
       border-radius: 0px 0px 6px 6px;
   }
 
-  #body {
-      position: absolute;
-      height: 90%;
-      width: 90%;
-      left: 5%;
-      top: 5%;
+  #output{
+    position: absolute;
+    left: 50%;
+    top: 9%;
+    height: 7.5%;
+    width: 14.25%; 
+    left: 42.5%;
+  }
+  .screen {
+    position: absolute;
+    height: 40%;
+    width: 15%;
+    left: 42.5%;
+    top: 20%;
+  }
+
+  .foot{
+    position: absolute;
+    height: 9%;
+    width: 7%;
+    left: 46.5%;
+    top: 65%;
   }
 
   /* ===================================================== */
 
-  /* - */
-  #action_key_minus {
-      position: absolute;
-      height: 12%;
-      width: 12%;
-      left: 66%;
-      top: 49%; 
-      float: left;
+  #equals{
+    border: none;
+    cursor:pointer ;  
+    font-family: "Nunito", sans-serif;
+    background-color: rgb(78, 241, 78);
+    border-radius: 6px;
+    font-weight: bold;
+    padding: 5px;
   }
 
-  /* + */
-  #action_key_add {
-      position: absolute;
-      height: 12%;
-      width: 12%;
-      left: 66%;
-      top: 32%;
-      float: left;
+  #clear{
+    border: none;
+    cursor:pointer ;  
+    font-family: "Nunito", sans-serif;
+    background-color: coral;
+    border-radius: 6px;
+    font-weight: bold;
+    padding: 5px;
   }
 
-  /* x */
-  #action_key_multiply {
-      position: absolute;
-      height: 12%;
-      width: 12%;
-      left: 83%;
-      top: 32%;
-      float: left;
+  #close{
+    border: none;
+    cursor:pointer ;  
+    font-family: "Nunito", sans-serif;
+    background-color: crimson;
+    border-radius: 6px;
+    font-weight: bold;
+    padding: 5px;
   }
 
-  /* % */
-  #action_key_divide {
-      position: absolute;
-      height: 12%;
-      width: 12%;
-      left: 83%;
-      top: 49%;      
-      float: left;
-  }
+  /* ================================================= */
 
-  /* = */
-  #action_key_equals {
-      position: absolute;
-      height: 12%;
-      width: 25%;
-      left: 68%;
-      top: 66%;
-      float: left;
-  }
+.grid-numbr {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 3px 3px;
+    justify-content: center;
+    align-content: center;
+}
 
-  /* clr */
-  #action_key_clear {
-      position: absolute;
-      height: 12%;
-      width: 25%;
-      left: 68%;
-      top: 83%;
-      float: left;
-  }
+.grid-opert {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 3px 3px;
+    justify-content: center;
+    align-content: center;
+}
 
-  /* =============================================== */
-  /* ================ Number inputs ================ */
+.grid-funct {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 3px 3px;
+    justify-content: center;
+    align-content: center;
+}
 
-  #action_key_1 {
-      position: absolute;
-      height: 12%;
-      width: 12%;
-      left: 5%;
-      top: 32%;
-      float: left;
-  }
+#container-numbr {
+    float: left;
+    height: 100%;
+    width: 59.5%;
+}
 
-  #action_key_2 {
-      position: absolute;
-      height: 12%;
-      width: 12%;
-      left: 22%;
-      top: 32%;
-      float: left;
-  }
+#container-opert {
+    float: right;
+    float: top;
+    height: 49.5%;
+    width: 39.5%;
+}
 
-  #action_key_3 {
-      position: absolute;
-      height: 12%;
-      width: 12%;
-      left: 39%;
-      top: 32%;
-      float: left;
-  }
+#container-funct {
+    float: right;
+    float: bottom;
+    height: 49.5%;
+    width: 39.5%;
+    padding-top: 1%;
+}
 
-  #action_key_4 {
-      position: absolute;
-      height: 12%;
-      width: 12%;
-      left: 5%;
-      top: 49%;
-      float: left;
-  }
+  /* ================================================= */
 
-  #action_key_5 {
-      position: absolute;
-      height: 12%;
-      width: 12%;
-      left: 22%;
-      top: 49%;
-      float: left;
-  }
+.fit {
+    height: 100%;
+    width: 100%;
+}
 
-  #action_key_6 {
-      position: absolute;
-      height: 12%;
-      width: 12%;
-      left: 39%;
-      top: 49%;
-      float: left;
-  }
-
-  #action_key_7 {
-      position: absolute;
-      height: 12%;
-      width: 12%;
-      left: 5%;
-      top: 66%;
-      float: left;
-  }
-
-  #action_key_8 {
-      position: absolute;
-      height: 12%;
-      width: 12%;
-      left: 22%;
-      top: 66%;
-      float: left;
-  }
-
-  #action_key_9 {
-      position: absolute;
-      height: 12%;
-      width: 12%;
-      left: 39%;
-      top: 66%;
-      float: left;
-  }
-
-  #action_key_0 {
-      position: absolute;
-      height: 12%;
-      width: 12%;
-      left: 5%;
-      top: 83%;
-      float: left;
-  }
-
-  #action_key_00 {
-      position: absolute;
-      height: 12%;
-      width: 25%;
-      left: 24%;
-      top: 83%;
-      float: left;
-  }
-
-  .Fit {
-      position: absolute;
-      height: 100%;
-      width: 100%;
-  }
-
-  .Font {
+.font {
     border: none;
     cursor:pointer ;  
     font-family: "Nunito", sans-serif;
@@ -227,12 +147,4 @@
     border-radius: 6px;
     font-weight: bold;
     padding: 5px;
-  }
-
-  .equals{
-    background-color: rgb(78, 241, 78);
-  }
-
-  .close{
-    background-color: crimson;
   }
