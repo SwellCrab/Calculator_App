@@ -60,6 +60,15 @@
     border-radius: 6px;
     font-weight: bold;
     padding: 5px;
+    transition: .5s; 
+  }
+
+  #equals:hover{
+    background-color: rgb(32, 238, 32);
+  }
+
+  #equals:active{
+    scale: 95%;
   }
 
   #clear{
@@ -70,6 +79,32 @@
     border-radius: 6px;
     font-weight: bold;
     padding: 5px;
+    transition: .25s; 
+  }
+
+  #clear:hover{
+    background-color: rgb(255, 109, 52);
+  }
+  #clear:active{
+    scale: 95%;
+  }
+
+  #ANS{
+    border: none;
+    cursor:pointer ;  
+    font-family: "Nunito", sans-serif;
+    background-color: rgb(171, 231, 49);
+    border-radius: 6px;
+    font-weight: bold;
+    padding: 5px;
+    transition: .25s; 
+  }
+
+  #ANS:hover{
+    background-color: rgb(176, 247, 35);
+  }
+  #ANS:active{
+    scale: 95%;
   }
 
   #close{
@@ -80,6 +115,11 @@
     border-radius: 6px;
     font-weight: bold;
     padding: 5px;
+    transition: .25s;
+  }
+
+  #close:hover{
+    background-color: rgb(224, 0, 30);
   }
 
   /* ================================================= */
@@ -147,4 +187,13 @@
     border-radius: 6px;
     font-weight: bold;
     padding: 5px;
+    transition: .25s; 
+  }
+
+  .font:hover {
+    background-color: rgb(67, 133, 255);
+  }
+
+  .font:active {
+    scale:95%;
   }
