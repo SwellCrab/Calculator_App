@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
+import { useEffect } from 'react';
 import './Modal.css';
 
 function Modal({ modalStatePortal }) {
@@ -10,6 +11,7 @@ function Modal({ modalStatePortal }) {
   const [number1, setNumber1] = useState('');
   const [number2, setNumber2] = useState('');
   const [sum, setSum] = useState('');
+  const [ANS, setANS] = useState('');
 
   const numbr_btns = [];
   const opert_btns = [];
@@ -26,31 +28,38 @@ function Modal({ modalStatePortal }) {
 
   function handleCalculation() {
 
-    if (equalsflag === '') {
-
-      if (operator === '+') {
-        setSum(parseInt(number1) + parseInt(number2));
-        setEqualsflag('=');
-
-      } else if (operator === '-') {
-        setSum(parseInt(number1) - parseInt(number2));
-        setEqualsflag('=');
-
-      } else if (operator === 'x') {
-        setSum(parseFloat((parseFloat(number1) * parseFloat(number2)).toFixed(3)));
-        setEqualsflag('=');
-
-      } else if (operator === '%') {
-        setSum(parseFloat((parseFloat(number1) / parseFloat(number2)).toFixed(3)));
-        setEqualsflag('=');
-      } else {
-        alert('Select an operator first');
-      }
-
+    if (number2 === '') {
+      alert('Declare both variables before pressing =');
     } else {
-      alert("Clear first before retrying");
-    }
+      if (equalsflag === '') {
 
+        if (operator === '+') {
+          setSum(parseInt(number1) + parseInt(number2));
+          setANS(parseInt(number1) + parseInt(number2));
+          setEqualsflag('=');
+
+        } else if (operator === '-') {
+          setSum(parseInt(number1) - parseInt(number2));
+          setANS(parseInt(number1) - parseInt(number2));
+          setEqualsflag('=');
+
+        } else if (operator === 'x') {
+          setSum(parseFloat((parseFloat(number1) * parseFloat(number2)).toFixed(3)));
+          setANS(parseFloat((parseFloat(number1) * parseFloat(number2)).toFixed(3)));
+          setEqualsflag('=');
+
+        } else if (operator === '%') {
+          setSum(parseFloat((parseFloat(number1) / parseFloat(number2)).toFixed(3)));
+          setANS(parseFloat((parseFloat(number1) / parseFloat(number2)).toFixed(3)));
+          setEqualsflag('=');
+        } else {
+          alert('Select an operator first');
+        }
+
+      } else {
+        alert("Clear first before retrying");
+      }
+    }
   }
 
   function clear() {
@@ -62,7 +71,7 @@ function Modal({ modalStatePortal }) {
     setSum('');
   }
 
-  ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '00', '.'].forEach(i => {
+  ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '.'].forEach(i => {
     numbr_btns.push(
       <div>
         <button className="fit font" onClick={e => {
@@ -111,6 +120,16 @@ function Modal({ modalStatePortal }) {
       <div className="screen">
         <div id='container-numbr' class='grid-numbr'>
           {numbr_btns}
+          <button id='ANS' className='fit' onClick={() => {
+            if (equalsflag === '') {
+              if (operatorflag) {
+                setNumber2(ANS);
+              } else {
+                setNumber1(ANS);
+              }
+            }
+          }}>ANS</button>
+          
         </div>
         <div id='container-opert' class='grid-opert'>
           {opert_btns}
